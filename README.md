@@ -6,7 +6,7 @@ Installing v2ray on raspberry pi 3B
 #### Update OpenWRT repos by opkg command
     opkg update
 #### Install Package(ca-certificates/curl/unzip) for downloading v2ray binary
-    opkg install ca-certificates curl unzip
+    opkg install ca-certificates curl unzip iptables-mod-tproxy
 #### Download and Unzip the v2ray archive file
     export V2_GIT_PATH="https://github.com/v2ray/v2ray-core"
     export V2_VERSION="latest"
@@ -236,3 +236,12 @@ EOF
     sed -i "s/list\ interface.*/list\ interface 'br-lan'/" /etc/config/dhcp
     /etc/init.d/dnsmasq stop
     /etc/init.d/dnsmasq start
+
+#### Aria2 settings for downloading via v2ray
+    opkg update
+    opkg install aria2 luci-app-aria2 iptables-mod-extra
+```
+cat <<'EOF' >> /etc/firewall.user
+iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner aria2 -j V2RAY
+EOF
+```
