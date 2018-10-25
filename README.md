@@ -88,12 +88,12 @@ cat <<'EOF' > /etc/v2ray/config.json
         "headers": {
           "Host": "www.example.com"
         }
+      },
+      "sockopt": {
+        "mark": 255,
+        "tcpFastOpen": false,
+        "tproxy": "redirect"
       }
-    },
-    "sockopt": {
-      "mark": 255,
-      "tcpFastOpen": false,
-      "tproxy": "redirect"
     },
     "mux": {
       "enabled": false,
@@ -115,7 +115,12 @@ cat <<'EOF' > /etc/v2ray/config.json
     {
       "protocol": "freedom",
       "settings": {},
-      "tag": "direct"
+      "tag": "direct",
+      "sockopt": {
+        "mark": 255,
+        "tcpFastOpen": false,
+        "tproxy": "redirect"
+      }
     },
     {
       "protocol": "blackhole",
