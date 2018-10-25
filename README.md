@@ -221,6 +221,8 @@ ip rule add fwmark 1 lookup 100
 exit 0
 EOF
 ```
+#### Restart Firewall settings for apply iptables rules
+    /etc/init.d/firewall restart
 
 #### Configure DNS settings for DoH
     opkg update
