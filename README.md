@@ -6,7 +6,7 @@ Installing v2ray on raspberry pi 3B
 #### Update OpenWRT repos by opkg command
     opkg update
 #### Install Package(ca-certificates/curl/unzip) for downloading v2ray binary
-    opkg install -y ca-certificates curl unzip
+    opkg install ca-certificates curl unzip
 #### Download and Unzip the v2ray archive file
     export V2_GIT_PATH="https://github.com/v2ray/v2ray-core"
     export V2_VERSION="latest"
@@ -221,3 +221,18 @@ ip rule add fwmark 1 lookup 100
 exit 0
 EOF
 ```
+
+#### Configure DNS settings for DoH
+    opkg update
+    opkg install https_dns_proxy
+    sed -i 's#https://dns.google.com/resolve?#https://cloudflare-dns.com/dns-query?ct=application/dns-json\&#g' /etc/config/https_dns_proxy
+    /etc/init.d/https_dns_proxy enable
+    /etc/init.d/https_dns_proxy stop
+    /etc/init.d/https_dns_proxy start
+
+#### Configure Dnsmasq settings for DoH
+    sed -i "s/option\ noresolv.*/option\ noresolv '1'/" /etc/config/dhcp
+    sed -i "s/list\ server.*/list\ server '127.0.0.1#5053'/" /etc/config/dhcp
+    sed -i "s/list\ interface.*/list\ interface 'br-lan'/" /etc/config/dhcp
+    /etc/init.d/dnsmasq stop
+    /etc/init.d/dnsmasq start
