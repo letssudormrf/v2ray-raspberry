@@ -1,6 +1,7 @@
 # v2ray-raspberry
 Installing v2ray on raspberry pi 3B
 
+### Raspberry Pi 3B
 #### Login to raspberry pi 3B via SSH
     ssh root@192.168.1.1
 #### Update OpenWRT repos by opkg command
@@ -180,6 +181,7 @@ EOF
 ```
     chmod a+x /etc/init.d/v2ray
     /etc/init.d/v2ray enable
+    /etc/init.d/v2ray stop
     /etc/init.d/v2ray start
 #### Insert iptables rules
 ```
@@ -229,6 +231,7 @@ EOF
 #### Restart Firewall settings for apply iptables rules
     /etc/init.d/firewall restart
 
+### DNS
 #### Configure DNS settings for DoH
     opkg update
     opkg install https_dns_proxy
@@ -244,6 +247,7 @@ EOF
     /etc/init.d/dnsmasq stop
     /etc/init.d/dnsmasq start
 
+### Aria2
 #### Aria2 settings for downloading via v2ray
     opkg update
     opkg install aria2 luci-app-aria2 iptables-mod-extra
@@ -252,3 +256,11 @@ cat <<'EOF' >> /etc/firewall.user
 iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner aria2 -j V2RAY
 EOF
 ```
+
+### 4G network
+#### Sharing Android 4G network via usb cable
+    opkg update
+    opkg install kmod-usb-net kmod-usb-net-rndis kmod-usb-net-cdc-ether usbutils
+#### Sharing usb stick network via usb port
+    opkg update
+    opkg install usb-modeswitch kmod-mii kmod-usb-net kmod-usb-wdm kmod-usb-net-qmi-wwan uqmi
