@@ -254,7 +254,7 @@ EOF
 ### Aria2
 #### Aria2 settings for downloading via v2ray
     opkg update
-    opkg install aria2 luci-app-aria2 iptables-mod-extra
+    opkg install aria2 luci-app-aria2 ariang iptables-mod-extra
 ```
 cat <<'EOF' >> /etc/firewall.user
 iptables -t nat -A OUTPUT -p tcp -m owner --uid-owner aria2 -j V2RAY
