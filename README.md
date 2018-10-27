@@ -228,7 +228,11 @@ ip rule add fwmark 1 lookup 100
 exit 0
 EOF
 ```
-#### Restart Firewall settings for apply iptables rules
+#### Apply the udp tproxy rules now
+    ip route add local default dev lo table 100
+    ip rule add fwmark 1 lookup 100
+
+#### Then restart Firewall settings for apply iptables rules
     /etc/init.d/firewall restart
 
 ### DNS
