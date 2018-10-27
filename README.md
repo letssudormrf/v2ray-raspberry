@@ -7,7 +7,7 @@ Installing v2ray on raspberry pi 3B
 #### Update OpenWRT repos by opkg command
     opkg update
 #### Install Package(ca-certificates/curl/unzip) for downloading v2ray binary
-    opkg install ca-certificates curl unzip iptables-mod-tproxy
+    opkg install ca-bundle ca-certificates curl unzip iptables-mod-tproxy
 #### Download and Unzip the v2ray archive file
     export V2_GIT_PATH="https://github.com/v2ray/v2ray-core"
     export V2_VERSION="latest"
