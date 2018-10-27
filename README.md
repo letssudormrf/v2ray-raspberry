@@ -263,6 +263,28 @@ EOF
 
 ### USB Automount
 #### USB will be automount when input
+
+### Modules for USB 1.1
+```
+opkg update
+opkg install kmod-usb-uhci
+insmod usbcore
+insmod uhci
+```
+
+### Modules for USB 2.0
+```
+opkg update
+opkg install kmod-usb2
+insmod ehci-hcd
+```
+
+### Modules for USB 3.0
+```
+opkg install kmod-usb3
+insmod kmod-usb3
+```
+
 ```
 cat <<'EOF' > /etc/hotplug.d/block/10-mount
 #!/bin/sh
