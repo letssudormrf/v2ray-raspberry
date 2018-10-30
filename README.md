@@ -248,8 +248,7 @@ EOF
     sed -i "s/option\ noresolv.*/option\ noresolv '1'/" /etc/config/dhcp
     sed -i "s/list\ server.*/list\ server '127.0.0.1#5053'/" /etc/config/dhcp
     sed -i "s/list\ interface.*/list\ interface 'br-lan'/" /etc/config/dhcp
-    /etc/init.d/dnsmasq stop
-    /etc/init.d/dnsmasq start
+    /etc/init.d/dnsmasq restart
 
 ### Aria2
 #### Aria2 settings for downloading via v2ray
