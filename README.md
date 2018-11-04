@@ -263,6 +263,16 @@ EOF
 ### USB Automount
 #### USB will be automount when input
 
+### mount-utils
+```
+opkg update
+opkg install kmod-usb-ohci kmod-usb2 kmod-usb-uhci kmod-usb-storage
+opkg install kmod-fs-vfat ntfs-3g
+opkg install block-mount mount-utils
+opkg install fdisk
+opkg install kmod-nls-cp437 kmod-nls-iso8859-1
+```
+
 ### Modules for USB 1.1
 ```
 opkg update
