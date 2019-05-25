@@ -168,7 +168,7 @@ start_service() {
         mkdir /var/log/v2ray > /dev/null 2>&1
         procd_open_instance
         procd_set_param respawn
-        procd_set_param env V2RAY_RAY_BUFFER_SIZE="500" V2RAY_VMESS_PADDING="1"
+        procd_set_param env V2RAY_RAY_BUFFER_SIZE="500"
         procd_set_param limits core="unlimited" nofile="92963 92963"
         procd_set_param command /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
         procd_set_param file /etc/v2ray/config.json
