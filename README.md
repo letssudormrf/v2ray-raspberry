@@ -267,7 +267,7 @@ EOF
 ```
 opkg update
 opkg install kmod-usb-ohci kmod-usb2 kmod-usb-uhci kmod-usb-storage
-opkg install kmod-fs-vfat kmod-fs-ntfs
+opkg install kmod-fs-vfat kmod-fs-ntfs ntfs-3g ntfs-3g-utils
 opkg install block-mount mount-utils
 opkg install fdisk
 opkg install kmod-nls-cp437 kmod-nls-iso8859-1
