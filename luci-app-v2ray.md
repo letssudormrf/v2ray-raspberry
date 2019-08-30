@@ -25,20 +25,18 @@
 #### Install luci-app-v2ray using opkg install command
     opkg install /tmp/luci-app-v2ray.ipk
 
-
-
 #### V2Ray - Global Settings
-    - [x] V2Ray file: /usr/bin/v2ray/v2ray
-    - [x] V2Ray asset location: /usr/bin/v2ray/
+- [x] V2Ray file: /usr/bin/v2ray/v2ray
+- [x] V2Ray asset location: /usr/bin/v2ray/
 
-    - [x] socks_proxy
-    - [x] transparent_proxy
-    - [x] upstream_vmess
-    - [x] direct
-    - [x] block
+- [x] socks_proxy
+- [x] transparent_proxy
+- [x] upstream_vmess
+- [x] direct
+- [x] block
 
 #### V2Ray - Outbound - upstream_vmess
-    Settings
+#### Settings
 ```
 {
    "vnext": [
@@ -57,7 +55,7 @@
    ]
  }
 ```
-    Stream settings
+#### Stream settings
 ```
 {
    "security": "tls",
@@ -75,7 +73,7 @@
  }
 ```
 #### V2Ray - Routing
-    - [x] enabled
+- [x] enabled
 
 ### Aria2
 #### Aria2 settings for downloading via v2ray
