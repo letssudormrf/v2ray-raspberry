@@ -1,5 +1,5 @@
 # v2ray-raspberry
-Installing v2ray on raspberry pi 4B
+    Installing v2ray on raspberry pi 4B
 
 ### Raspberry Pi 4B
 #### Login to raspberry pi 4B via SSH
@@ -28,14 +28,14 @@ Installing v2ray on raspberry pi 4B
 
 
 #### V2Ray - Global Settings
-- [x] V2Ray file: /usr/bin/v2ray/v2ray
-- [x] V2Ray asset location: /usr/bin/v2ray/
+    - [x] V2Ray file: /usr/bin/v2ray/v2ray
+    - [x] V2Ray asset location: /usr/bin/v2ray/
 
-- [x] socks_proxy
-- [x] transparent_proxy
-- [x] upstream_vmess
-- [x] direct
-- [x] block
+    - [x] socks_proxy
+    - [x] transparent_proxy
+    - [x] upstream_vmess
+    - [x] direct
+    - [x] block
 
 #### V2Ray - Outbound - upstream_vmess
     Settings
@@ -75,7 +75,7 @@ Installing v2ray on raspberry pi 4B
  }
 ```
 #### V2Ray - Routing
-- [x] enabled
+    - [x] enabled
 
 ### Aria2
 #### Aria2 settings for downloading via v2ray
